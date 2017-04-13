@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D30C1321E9B9BCC000D5D5B /* mlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D30C1311E9B9BCC000D5D5B /* mlist.plist */; };
+		1DB63F261E9D34A200745093 /* MusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB63F251E9D34A200745093 /* MusicManager.m */; };
+		1DB63F291E9D34B300745093 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB63F281E9D34B300745093 /* Music.m */; };
+		1DB63F2C1E9D34D800745093 /* Loric.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB63F2B1E9D34D800745093 /* Loric.m */; };
+		1DD643CE1E9FBA8200C50725 /* PlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD643CD1E9FBA8200C50725 /* PlayController.m */; };
+		1DEA2C5C1E8BA3DD0087FF23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA2C5B1E8BA3DD0087FF23 /* main.m */; };
+		1DEA2C5F1E8BA3DE0087FF23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA2C5E1E8BA3DE0087FF23 /* AppDelegate.m */; };
+		1DEA2C651E8BA3DE0087FF23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEA2C631E8BA3DE0087FF23 /* Main.storyboard */; };
+		1DEA2C671E8BA3DE0087FF23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DEA2C661E8BA3DE0087FF23 /* Assets.xcassets */; };
+		1DEA2C6A1E8BA3DE0087FF23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEA2C681E8BA3DE0087FF23 /* LaunchScreen.storyboard */; };
+		1DEA2C781E8BA4F70087FF23 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA2C771E8BA4F70087FF23 /* RootController.m */; };
+		1DEA2C7D1E8BA8790087FF23 /* XCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA2C7C1E8BA8790087FF23 /* XCViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30C1311E9B9BCC000D5D5B /* mlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mlist.plist; sourceTree = "<group>"; };
+		1DB63F241E9D34A200745093 /* MusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicManager.h; sourceTree = "<group>"; };
+		1DB63F251E9D34A200745093 /* MusicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicManager.m; sourceTree = "<group>"; };
+		1DB63F271E9D34B300745093 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		1DB63F281E9D34B300745093 /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
+		1DB63F2A1E9D34D800745093 /* Loric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loric.h; sourceTree = "<group>"; };
+		1DB63F2B1E9D34D800745093 /* Loric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loric.m; sourceTree = "<group>"; };
+		1DD643CC1E9FBA8200C50725 /* PlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayController.h; sourceTree = "<group>"; };
+		1DD643CD1E9FBA8200C50725 /* PlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayController.m; sourceTree = "<group>"; };
+		1DEA2C571E8BA3DD0087FF23 /* QQMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DEA2C5B1E8BA3DD0087FF23 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1DEA2C5D1E8BA3DD0087FF23 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1DEA2C5E1E8BA3DE0087FF23 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1DEA2C641E8BA3DE0087FF23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1DEA2C661E8BA3DE0087FF23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1DEA2C691E8BA3DE0087FF23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1DEA2C6B1E8BA3DE0087FF23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DEA2C761E8BA4F70087FF23 /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
+		1DEA2C771E8BA4F70087FF23 /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
+		1DEA2C7B1E8BA8790087FF23 /* XCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCViewController.h; sourceTree = "<group>"; };
+		1DEA2C7C1E8BA8790087FF23 /* XCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1DEA2C541E8BA3DD0087FF23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D30C1301E9B9A64000D5D5B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1DEA2C4E1E8BA3DD0087FF23 = {
+			isa = PBXGroup;
+			children = (
+				1DEA2C591E8BA3DD0087FF23 /* QQMusic */,
+				1DEA2C581E8BA3DD0087FF23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1DEA2C581E8BA3DD0087FF23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1DEA2C571E8BA3DD0087FF23 /* QQMusic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1DEA2C591E8BA3DD0087FF23 /* QQMusic */ = {
+			isa = PBXGroup;
+			children = (
+				1DEA2C711E8BA4AD0087FF23 /* Category */,
+				1DEA2C721E8BA4AD0087FF23 /* Controller */,
+				1D30C1301E9B9A64000D5D5B /* Views */,
+				1DEA2C731E8BA4AD0087FF23 /* Model */,
+				1DEA2C741E8BA4AD0087FF23 /* Resources */,
+				1DEA2C751E8BA4AD0087FF23 /* Tool */,
+				1DEA2C5D1E8BA3DD0087FF23 /* AppDelegate.h */,
+				1DEA2C5E1E8BA3DE0087FF23 /* AppDelegate.m */,
+				1DEA2C631E8BA3DE0087FF23 /* Main.storyboard */,
+				1DEA2C661E8BA3DE0087FF23 /* Assets.xcassets */,
+				1DEA2C681E8BA3DE0087FF23 /* LaunchScreen.storyboard */,
+				1DEA2C6B1E8BA3DE0087FF23 /* Info.plist */,
+				1DEA2C5A1E8BA3DD0087FF23 /* Supporting Files */,
+			);
+			path = QQMusic;
+			sourceTree = "<group>";
+		};
+		1DEA2C5A1E8BA3DD0087FF23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D30C1311E9B9BCC000D5D5B /* mlist.plist */,
+				1DEA2C5B1E8BA3DD0087FF23 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1DEA2C711E8BA4AD0087FF23 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1DEA2C721E8BA4AD0087FF23 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1DEA2C7B1E8BA8790087FF23 /* XCViewController.h */,
+				1DEA2C7C1E8BA8790087FF23 /* XCViewController.m */,
+				1DEA2C761E8BA4F70087FF23 /* RootController.h */,
+				1DEA2C771E8BA4F70087FF23 /* RootController.m */,
+				1DD643CC1E9FBA8200C50725 /* PlayController.h */,
+				1DD643CD1E9FBA8200C50725 /* PlayController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DEA2C731E8BA4AD0087FF23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DB63F241E9D34A200745093 /* MusicManager.h */,
+				1DB63F251E9D34A200745093 /* MusicManager.m */,
+				1DB63F271E9D34B300745093 /* Music.h */,
+				1DB63F281E9D34B300745093 /* Music.m */,
+				1DB63F2A1E9D34D800745093 /* Loric.h */,
+				1DB63F2B1E9D34D800745093 /* Loric.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1DEA2C741E8BA4AD0087FF23 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1DEA2C751E8BA4AD0087FF23 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1DEA2C561E8BA3DD0087FF23 /* QQMusic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEA2C6E1E8BA3DE0087FF23 /* Build configuration list for PBXNativeTarget "QQMusic" */;
+			buildPhases = (
+				1DEA2C531E8BA3DD0087FF23 /* Sources */,
+				1DEA2C541E8BA3DD0087FF23 /* Frameworks */,
+				1DEA2C551E8BA3DD0087FF23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QQMusic;
+			productName = QQMusic;
+			productReference = 1DEA2C571E8BA3DD0087FF23 /* QQMusic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1DEA2C4F1E8BA3DD0087FF23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = SF;
+				TargetAttributes = {
+					1DEA2C561E8BA3DD0087FF23 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = VN226642G5;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1DEA2C521E8BA3DD0087FF23 /* Build configuration list for PBXProject "QQMusic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1DEA2C4E1E8BA3DD0087FF23;
+			productRefGroup = 1DEA2C581E8BA3DD0087FF23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1DEA2C561E8BA3DD0087FF23 /* QQMusic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1DEA2C551E8BA3DD0087FF23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DEA2C6A1E8BA3DE0087FF23 /* LaunchScreen.storyboard in Resources */,
+				1DEA2C671E8BA3DE0087FF23 /* Assets.xcassets in Resources */,
+				1D30C1321E9B9BCC000D5D5B /* mlist.plist in Resources */,
+				1DEA2C651E8BA3DE0087FF23 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1DEA2C531E8BA3DD0087FF23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DB63F2C1E9D34D800745093 /* Loric.m in Sources */,
+				1DB63F261E9D34A200745093 /* MusicManager.m in Sources */,
+				1DEA2C781E8BA4F70087FF23 /* RootController.m in Sources */,
+				1DEA2C5F1E8BA3DE0087FF23 /* AppDelegate.m in Sources */,
+				1DB63F291E9D34B300745093 /* Music.m in Sources */,
+				1DD643CE1E9FBA8200C50725 /* PlayController.m in Sources */,
+				1DEA2C5C1E8BA3DD0087FF23 /* main.m in Sources */,
+				1DEA2C7D1E8BA8790087FF23 /* XCViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1DEA2C631E8BA3DE0087FF23 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DEA2C641E8BA3DE0087FF23 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1DEA2C681E8BA3DE0087FF23 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DEA2C691E8BA3DE0087FF23 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEA2C6C1E8BA3DE0087FF23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1DEA2C6D1E8BA3DE0087FF23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1DEA2C6F1E8BA3DE0087FF23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VN226642G5;
+				INFOPLIST_FILE = QQMusic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suifeng.QQMusic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1DEA2C701E8BA3DE0087FF23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VN226642G5;
+				INFOPLIST_FILE = QQMusic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suifeng.QQMusic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEA2C521E8BA3DD0087FF23 /* Build configuration list for PBXProject "QQMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEA2C6C1E8BA3DE0087FF23 /* Debug */,
+				1DEA2C6D1E8BA3DE0087FF23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEA2C6E1E8BA3DE0087FF23 /* Build configuration list for PBXNativeTarget "QQMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEA2C6F1E8BA3DE0087FF23 /* Debug */,
+				1DEA2C701E8BA3DE0087FF23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1DEA2C4F1E8BA3DD0087FF23 /* Project object */;
+}
