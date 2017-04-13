@@ -12,6 +12,9 @@
 		1DB63F291E9D34B300745093 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB63F281E9D34B300745093 /* Music.m */; };
 		1DB63F2C1E9D34D800745093 /* Loric.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB63F2B1E9D34D800745093 /* Loric.m */; };
 		1DD643CE1E9FBA8200C50725 /* PlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD643CD1E9FBA8200C50725 /* PlayController.m */; };
+		1DD643D11E9FBF8700C50725 /* PlayTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD643D01E9FBF8700C50725 /* PlayTabBarView.m */; };
+		1DD643D51E9FC4D600C50725 /* UIView+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD643D41E9FC4D600C50725 /* UIView+Ext.m */; };
+		1DD643D81E9FC90500C50725 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD643D71E9FC90500C50725 /* UIColor+Hex.m */; };
 		1DEA2C5C1E8BA3DD0087FF23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA2C5B1E8BA3DD0087FF23 /* main.m */; };
 		1DEA2C5F1E8BA3DE0087FF23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA2C5E1E8BA3DE0087FF23 /* AppDelegate.m */; };
 		1DEA2C651E8BA3DE0087FF23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEA2C631E8BA3DE0087FF23 /* Main.storyboard */; };
@@ -31,6 +34,13 @@
 		1DB63F2B1E9D34D800745093 /* Loric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loric.m; sourceTree = "<group>"; };
 		1DD643CC1E9FBA8200C50725 /* PlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayController.h; sourceTree = "<group>"; };
 		1DD643CD1E9FBA8200C50725 /* PlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayController.m; sourceTree = "<group>"; };
+		1DD643CF1E9FBF8700C50725 /* PlayTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayTabBarView.h; sourceTree = "<group>"; };
+		1DD643D01E9FBF8700C50725 /* PlayTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayTabBarView.m; sourceTree = "<group>"; };
+		1DD643D21E9FC14800C50725 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1DD643D31E9FC4D600C50725 /* UIView+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Ext.h"; sourceTree = "<group>"; };
+		1DD643D41E9FC4D600C50725 /* UIView+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ext.m"; sourceTree = "<group>"; };
+		1DD643D61E9FC90500C50725 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		1DD643D71E9FC90500C50725 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		1DEA2C571E8BA3DD0087FF23 /* QQMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEA2C5B1E8BA3DD0087FF23 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DEA2C5D1E8BA3DD0087FF23 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,6 +69,8 @@
 		1D30C1301E9B9A64000D5D5B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1DD643CF1E9FBF8700C50725 /* PlayTabBarView.h */,
+				1DD643D01E9FBF8700C50725 /* PlayTabBarView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,6 +116,7 @@
 			children = (
 				1D30C1311E9B9BCC000D5D5B /* mlist.plist */,
 				1DEA2C5B1E8BA3DD0087FF23 /* main.m */,
+				1DD643D21E9FC14800C50725 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -111,6 +124,10 @@
 		1DEA2C711E8BA4AD0087FF23 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				1DD643D61E9FC90500C50725 /* UIColor+Hex.h */,
+				1DD643D71E9FC90500C50725 /* UIColor+Hex.m */,
+				1DD643D31E9FC4D600C50725 /* UIView+Ext.h */,
+				1DD643D41E9FC4D600C50725 /* UIView+Ext.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -228,12 +245,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD643D11E9FBF8700C50725 /* PlayTabBarView.m in Sources */,
 				1DB63F2C1E9D34D800745093 /* Loric.m in Sources */,
 				1DB63F261E9D34A200745093 /* MusicManager.m in Sources */,
 				1DEA2C781E8BA4F70087FF23 /* RootController.m in Sources */,
 				1DEA2C5F1E8BA3DE0087FF23 /* AppDelegate.m in Sources */,
 				1DB63F291E9D34B300745093 /* Music.m in Sources */,
+				1DD643D51E9FC4D600C50725 /* UIView+Ext.m in Sources */,
 				1DD643CE1E9FBA8200C50725 /* PlayController.m in Sources */,
+				1DD643D81E9FC90500C50725 /* UIColor+Hex.m in Sources */,
 				1DEA2C5C1E8BA3DD0087FF23 /* main.m in Sources */,
 				1DEA2C7D1E8BA8790087FF23 /* XCViewController.m in Sources */,
 			);
@@ -354,7 +374,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VN226642G5;
+				GCC_PREFIX_HEADER = QQMusic/PrefixHeader.pch;
 				INFOPLIST_FILE = QQMusic/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suifeng.QQMusic;
@@ -367,7 +389,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VN226642G5;
+				GCC_PREFIX_HEADER = QQMusic/PrefixHeader.pch;
 				INFOPLIST_FILE = QQMusic/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suifeng.QQMusic;

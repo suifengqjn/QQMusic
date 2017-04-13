@@ -7,8 +7,11 @@
 //
 
 #import "PlayController.h"
+#import "PlayTabBarView.h"
 
 @interface PlayController ()
+
+@property (nonatomic, strong) PlayTabBarView *barView;
 
 @end
 
@@ -16,9 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self buildUI];
 }
 
-
+- (void)buildUI
+{
+    self.title = self.music.name;
+    self.view.backgroundColor = [UIColor whiteColor];
+    _barView = [[PlayTabBarView alloc] init];
+    [self.view addSubview:_barView];
+}
 
 @end
