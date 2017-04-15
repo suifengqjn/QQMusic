@@ -64,7 +64,8 @@
     PlayController *playVC = [PlayController new];
     Music *music = [_dataArray objectAtIndex:indexPath.row];
     playVC.music = music;
-    [self.navigationController pushViewController:playVC animated:YES];
+    UINavigationController *navPlay = [[UINavigationController alloc] initWithRootViewController:playVC];
+    [self presentViewController:navPlay animated:YES completion:nil];
     
 }
 

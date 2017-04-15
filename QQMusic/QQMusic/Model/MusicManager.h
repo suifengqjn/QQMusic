@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "Music.h"
+
+typedef  NS_ENUM (NSInteger , MusicState) {
+    MusicInit = 0,
+    MusicPlaying,
+    MusicPause
+};
+
 @interface MusicManager : NSObject
 
+@property (nonatomic, assign) MusicState state;
+
 +(instancetype)getInstance;
+
 
 -(NSArray *)getAllMusics;
 

@@ -30,7 +30,7 @@
 - (instancetype)init
 {
     
-    self = [super initWithFrame:CGRectMake(0, kScreenHeight - Bar_Height, kScreenWidth, Bar_Height)];
+    self = [super initWithFrame:CGRectMake(0, kScreenHeight - Bar_Height - 10, kScreenWidth, Bar_Height)];
     if (self) {
         [self buildUI];
     }
@@ -40,6 +40,7 @@
 #pragma mark - View
 - (void)buildUI
 {
+    
     //top
     _topView = [[UIView alloc] init];
     _topView.frame = CGRectMake(0, 0, self.width, 40);
@@ -49,7 +50,6 @@
     _currentTimeLabel.frame = CGRectMake(0, 0, 60, 40);
     _currentTimeLabel.text = @"00:00";
     [_topView addSubview:_currentTimeLabel];
-    _currentTimeLabel.backgroundColor = [UIColor blueColor];
     
     _slider = [[UISlider alloc] init];
     _slider.frame = CGRectMake(60, 0, self.width - 60*2, 40);
@@ -61,25 +61,39 @@
     _totalTimeLabel.frame = CGRectMake(self.width - 60, 0, 60, 40);
     _totalTimeLabel.text = @"00:00";
     [_topView addSubview:_totalTimeLabel];
-    _totalTimeLabel.backgroundColor = [UIColor blueColor];
-    
-    
-    
     
     
     
     //bottom
     _bottomView = [[UIView alloc] init];
     _bottomView.frame = CGRectMake(0, _topView.height, kScreenWidth, Bar_Height - _topView.height);
-    _bottomView.backgroundColor = [UIColor grayColor];
     [self addSubview:_bottomView];
     
     _lastBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_lastBtn addTarget:self action:@selector(clickPreMusic) forControlEvents:UIControlEventTouchUpInside];
     [_lastBtn setImage:[UIImage imageNamed:@"player_btn_pre_normal"] forState:UIControlStateNormal];
     [_lastBtn setImage:[UIImage imageNamed:@"player_btn_pre_highlight"] forState:UIControlStateHighlighted];
-    _lastBtn.origin = CGPointMake(10, 10);
+    [_lastBtn sizeToFit];
+    _lastBtn.x = 20;
     [_bottomView addSubview:_lastBtn];
     
+    _playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_playBtn addTarget:self action:@selector(clickPlayMusic) forControlEvents:UIControlEventTouchUpInside];
+    [_playBtn setImage:[UIImage imageNamed:@"player_btn_play_normal"] forState:UIControlStateNormal];
+    [_playBtn setImage:[UIImage imageNamed:@"player_btn_play_highlight"] forState:UIControlStateHighlighted];
+    [_playBtn sizeToFit];
+    _playBtn.centerX = self.width/2;
+    [_bottomView addSubview:_playBtn];
+    
+    
+    _nextBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_nextBtn addTarget:self action:@selector(clickNextMusic) forControlEvents:UIControlEventTouchUpInside];
+    [_nextBtn setImage:[UIImage imageNamed:@"player_btn_next_normal"] forState:UIControlStateNormal];
+    [_nextBtn setImage:[UIImage imageNamed:@"player_btn_next_highlight"] forState:UIControlStateHighlighted];
+    [_nextBtn sizeToFit];
+    _nextBtn.x = self.width - 20 - _nextBtn.width;
+    [_bottomView addSubview:_nextBtn];
+
     
 }
 
@@ -93,4 +107,22 @@
     return label;
 }
 
+
+#pragma mark - aaction
+
+- (void)clickPreMusic
+{
+    
+}
+
+- (void)clickPlayMusic
+{
+    
+    
+}
+
+- (void)clickNextMusic
+{
+    
+}
 @end

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayTabBarView : UIView
+@protocol PlayTabBarViewDelegate <NSObject>
 
+- (void)goPreMusic;
+- (void)PlayPauseMusic;
+- (void)goNextMusic;
+
+@end
+
+@interface PlayTabBarView : UIView
+@property (nonatomic, weak) id <PlayTabBarViewDelegate> delegate;
 @end
