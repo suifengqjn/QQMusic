@@ -47,18 +47,18 @@
     [self addSubview:_topView];
     
     _currentTimeLabel = [self createTimeLabel];
-    _currentTimeLabel.frame = CGRectMake(0, 0, 60, 40);
+    _currentTimeLabel.frame = CGRectMake(0, 5, 60, 40);
     _currentTimeLabel.text = @"00:00";
     [_topView addSubview:_currentTimeLabel];
     
     _slider = [[UISlider alloc] init];
-    _slider.frame = CGRectMake(60, 0, self.width - 60*2, 40);
+    _slider.frame = CGRectMake(60, 5, self.width - 60*2, 40);
     _slider.minimumTrackTintColor = [UIColor colorWithRGB:0x2DB969 alpha:1];
     _slider.maximumTrackTintColor = [UIColor grayColor];
     [_topView addSubview:_slider];
     
     _totalTimeLabel = [self createTimeLabel];
-    _totalTimeLabel.frame = CGRectMake(self.width - 60, 0, 60, 40);
+    _totalTimeLabel.frame = CGRectMake(self.width - 60, 5, 60, 40);
     _totalTimeLabel.text = @"00:00";
     [_topView addSubview:_totalTimeLabel];
     
