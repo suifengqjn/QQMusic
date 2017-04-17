@@ -35,6 +35,8 @@
     [self buildContentView];
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
+    
+    [self PlayPauseMusic];
 }
 
 - (void)buildNav
@@ -119,6 +121,7 @@
 }
 
 #pragma mark - PlayTabBarViewDelegate
+
 - (void)goPreMusic
 {
     
@@ -126,7 +129,10 @@
 
 - (void)PlayPauseMusic
 {
-    
+    __weak __typeof(self)weakSelf = self;
+    [[MusicManager getInstance] playMusicWithFileName:self.music.mp3 didComplete:^{
+        [weakSelf goNextMusic];
+    }];
 }
 
 - (void)goNextMusic

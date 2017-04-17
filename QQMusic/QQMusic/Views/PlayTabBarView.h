@@ -18,4 +18,6 @@
 
 @interface PlayTabBarView : UIView
 @property (nonatomic, weak) id <PlayTabBarViewDelegate> delegate;
+
+- (void)UpdateUIWithPlaying:(BOOL)playing;
 @end

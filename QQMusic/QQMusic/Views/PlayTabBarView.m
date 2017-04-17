@@ -107,22 +107,39 @@
     return label;
 }
 
+#pragma mark - public action
+- (void)UpdateUIWithPlaying:(BOOL)playing
+{
+    if (playing) {
+        [_playBtn setImage:[UIImage imageNamed:@"player_btn_pause_normal"] forState:UIControlStateNormal];
+        [_playBtn setImage:[UIImage imageNamed:@"player_btn_pause_highlight"] forState:UIControlStateHighlighted];
+    } else {
+        [_playBtn setImage:[UIImage imageNamed:@"player_btn_play_normal"] forState:UIControlStateNormal];
+        [_playBtn setImage:[UIImage imageNamed:@"player_btn_play_highlight"] forState:UIControlStateHighlighted];
+    }
+}
 
-#pragma mark - aaction
+#pragma mark - delegate action
 
 - (void)clickPreMusic
 {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(goPreMusic)]) {
+        [self.delegate goPreMusic];
+    }
 }
 
 - (void)clickPlayMusic
 {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(PlayPauseMusic)]) {
+        [self.delegate PlayPauseMusic];
+    }
     
 }
 
 - (void)clickNextMusic
 {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(goNextMusic)]) {
+        [self.delegate goNextMusic];
+    }
 }
 @end

@@ -15,13 +15,25 @@ typedef  NS_ENUM (NSInteger , MusicState) {
     MusicPause
 };
 
+
+@protocol MusicManagerDelegate <NSObject>
+
+- (void)musicStateChanged:(MusicState )state;
+
+@end
+
 @interface MusicManager : NSObject
 
 @property (nonatomic, assign) MusicState state;
-
+@property (nonatomic, weak) id <MusicManagerDelegate>delegate;
 +(instancetype)getInstance;
 
 
 -(NSArray *)getAllMusics;
+
+
+- (void)playMusicWithFileName:(NSString *)fileName didComplete:(void (^)())complete;
+- (void)PlayOrPause;
+
 
 @end
