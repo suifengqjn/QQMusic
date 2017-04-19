@@ -123,28 +123,31 @@
     _rotateImageView.transform = CGAffineTransformRotate(_rotateImageView.transform, M_PI_4 * 0.01);
 }
 
+- (void)playMusic:(Music *)music
+{
+    __weak __typeof(self)weakSelf = self;
+    [[MusicManager getInstance] playMusicWithFileName:music.mp3 didComplete:^{
+        [weakSelf goNextMusic];
+    }];
+}
+
+
 #pragma mark - PlayTabBarViewDelegate
 
 - (void)goPreMusic
 {
     Music *preMusic = [[MusicManager getInstance] previousMusic];
     [self updateUI:preMusic];
-    __weak __typeof(self)weakSelf = self;
-    [[MusicManager getInstance] playMusicWithFileName:preMusic.mp3 didComplete:^{
-        [weakSelf goNextMusic];
-    }];
+    [self playMusic:preMusic];
 }
 
 - (void)PlayPauseMusic
 {
     if ([MusicManager getInstance].state == MusicInit) {
-        __weak __typeof(self)weakSelf = self;
-        [[MusicManager getInstance] playMusicWithFileName:self.music.mp3 didComplete:^{
-            [weakSelf goNextMusic];
-        }];
+        [self playMusic:self.music];
     } else if ([MusicManager getInstance].state == MusicPlaying) {
-        if (self.music != [MusicManager getInstance].musicLists[[MusicManager getInstance].currentIndex]) {
-            [[MusicManager getInstance] Play];
+        if (self.music != [MusicManager getInstance].preMusic) {
+             [self playMusic:self.music];
         }
     } else {
         [[MusicManager getInstance] Play];
@@ -166,10 +169,7 @@
 {
     Music *nextMusic = [[MusicManager getInstance] nextMusic];
     [self updateUI:nextMusic];
-    __weak __typeof(self)weakSelf = self;
-    [[MusicManager getInstance] playMusicWithFileName:nextMusic.mp3 didComplete:^{
-        [weakSelf goNextMusic];
-    }];
+     [self playMusic:nextMusic];
 }
 
 #pragma mark - MusicManagerDelegate

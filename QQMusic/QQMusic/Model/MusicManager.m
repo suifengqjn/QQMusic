@@ -66,6 +66,7 @@
 
 - (void)Play
 {
+    _preMusic = [self.musicLists objectAtIndex:_currentIndex];
     self.state = MusicPlaying;
     [self.player play];
 }
@@ -89,7 +90,7 @@
 {
     NSInteger pre = _currentIndex - 1;
     if (pre < 0) {
-        _currentIndex = 0;
+        _currentIndex = _musicLists.count - 1;
         return _musicLists.lastObject;
         
     } else {
@@ -102,8 +103,8 @@
 {
     NSInteger next = _currentIndex + 1;
     if (next > _musicLists.count - 1) {
-        _currentIndex = _musicLists.count - 1;
-        return _musicLists.lastObject;
+        _currentIndex = 0;
+        return _musicLists.firstObject;
     } else {
         _currentIndex += 1;
         return [_musicLists objectAtIndex:next];

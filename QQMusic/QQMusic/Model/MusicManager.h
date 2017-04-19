@@ -26,6 +26,7 @@ typedef  NS_ENUM (NSInteger , MusicState) {
 
 @property (nonatomic, strong, readonly) NSMutableArray *musicLists;
 @property (nonatomic, assign) NSInteger currentIndex;
+@property (nonatomic, strong) Music *preMusic;
 @property (nonatomic, assign) MusicState state;
 @property (nonatomic, weak) id <MusicManagerDelegate>delegate;
 +(instancetype)getInstance;
