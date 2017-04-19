@@ -11,7 +11,7 @@
 @protocol PlayTabBarViewDelegate <NSObject>
 
 - (void)goPreMusic;
-- (void)PlayPauseMusic;
+- (void)goPlayPauseMusic;
 - (void)goNextMusic;
 
 @end

@@ -11,7 +11,6 @@
 #import "PlayController.h"
 @interface RootController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray *dataArray;
 @end
 
 @implementation RootController
@@ -33,7 +32,7 @@
 #pragma mark - data
 - (void)getMusicList
 {
-    _dataArray = [[MusicManager getInstance] getAllMusics];
+    
     [_tableView reloadData];
 }
 
@@ -41,12 +40,12 @@
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _dataArray.count;
+    return [MusicManager getInstance].musicLists.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Music *music = [_dataArray objectAtIndex:indexPath.row];
+    Music *music = [[MusicManager getInstance].musicLists objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellIden"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cellIden"];
@@ -62,7 +61,8 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     PlayController *playVC = [PlayController new];
-    Music *music = [_dataArray objectAtIndex:indexPath.row];
+    Music *music = [[MusicManager getInstance].musicLists objectAtIndex:indexPath.row];
+    [MusicManager getInstance].currentIndex = indexPath.row;
     playVC.music = music;
     UINavigationController *navPlay = [[UINavigationController alloc] initWithRootViewController:playVC];
     [self presentViewController:navPlay animated:YES completion:nil];

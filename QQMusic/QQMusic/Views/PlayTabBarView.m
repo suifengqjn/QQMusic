@@ -130,8 +130,8 @@
 
 - (void)clickPlayMusic
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(PlayPauseMusic)]) {
-        [self.delegate PlayPauseMusic];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(goPlayPauseMusic)]) {
+        [self.delegate goPlayPauseMusic];
     }
     
 }

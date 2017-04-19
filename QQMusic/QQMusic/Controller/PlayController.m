@@ -9,10 +9,11 @@
 #import "PlayController.h"
 #import "PlayTabBarView.h"
 
-@interface PlayController () <PlayTabBarViewDelegate>
+@interface PlayController () <PlayTabBarViewDelegate,MusicManagerDelegate>
 
 @property (nonatomic, strong) PlayTabBarView *barView;
 @property (nonatomic, strong) UIScrollView *scrollow;
+@property (nonatomic, strong) UIImageView *backImageView;
 @property (nonatomic, strong) UIImageView *rotateImageView;
 @property (nonatomic, strong) UIView *LoricView;
 
@@ -33,7 +34,7 @@
     [self buildCover];
     [self buildBottomBar];
     [self buildContentView];
-    
+    [MusicManager getInstance].delegate = self;
     _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
     
     [self PlayPauseMusic];
@@ -54,16 +55,16 @@
 // 添加背景高斯模糊
 - (void)buildCover
 {
-    UIImageView *backImageView = [[UIImageView alloc] init];
-    backImageView.image = [UIImage imageNamed:self.music.image];
-    backImageView.frame = self.view.bounds;
-    [self.view addSubview:backImageView];
+    _backImageView = [[UIImageView alloc] init];
+    _backImageView.image = [UIImage imageNamed:self.music.image];
+    _backImageView.frame = self.view.bounds;
+    [self.view addSubview:_backImageView];
     
     
     UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
-    visualEffectView.frame = backImageView.bounds;
+    visualEffectView.frame = _backImageView.bounds;
     visualEffectView.alpha = 0.8;
-    [backImageView addSubview:visualEffectView];
+    [_backImageView addSubview:visualEffectView];
 }
 
 //旋转图片 和 歌词显示
@@ -104,9 +105,11 @@
     [self.view bringSubviewToFront:_barView];
 }
 
-- (void)updateUI
+- (void)updateUI:(Music *)music
 {
-    
+    self.title = music.name;
+    _backImageView.image = [UIImage imageNamed:music.image];
+    _rotateImageView.image = [UIImage imageNamed:music.image];
 }
 
 #pragma mark - action
@@ -124,20 +127,61 @@
 
 - (void)goPreMusic
 {
-    
-}
-
-- (void)PlayPauseMusic
-{
+    Music *preMusic = [[MusicManager getInstance] previousMusic];
+    [self updateUI:preMusic];
     __weak __typeof(self)weakSelf = self;
-    [[MusicManager getInstance] playMusicWithFileName:self.music.mp3 didComplete:^{
+    [[MusicManager getInstance] playMusicWithFileName:preMusic.mp3 didComplete:^{
         [weakSelf goNextMusic];
     }];
 }
 
-- (void)goNextMusic
+- (void)PlayPauseMusic
 {
+    if ([MusicManager getInstance].state == MusicInit) {
+        __weak __typeof(self)weakSelf = self;
+        [[MusicManager getInstance] playMusicWithFileName:self.music.mp3 didComplete:^{
+            [weakSelf goNextMusic];
+        }];
+    } else if ([MusicManager getInstance].state == MusicPlaying) {
+        if (self.music != [MusicManager getInstance].musicLists[[MusicManager getInstance].currentIndex]) {
+            [[MusicManager getInstance] Play];
+        }
+    } else {
+        [[MusicManager getInstance] Play];
+    }
+    
+    [_barView UpdateUIWithPlaying:[MusicManager getInstance].state == MusicPlaying];
     
 }
+
+- (void)goPlayPauseMusic
+{
+    if ([MusicManager getInstance].state == MusicPlaying) {
+        [[MusicManager getInstance] Pause];
+    } else {
+        [[MusicManager getInstance] Play];
+    }
+}
+- (void)goNextMusic
+{
+    Music *nextMusic = [[MusicManager getInstance] nextMusic];
+    [self updateUI:nextMusic];
+    __weak __typeof(self)weakSelf = self;
+    [[MusicManager getInstance] playMusicWithFileName:nextMusic.mp3 didComplete:^{
+        [weakSelf goNextMusic];
+    }];
+}
+
+#pragma mark - MusicManagerDelegate
+- (void)musicStateChanged:(MusicState )state
+{
+    if (state == MusicPlaying) {
+        [_barView UpdateUIWithPlaying:YES];
+    } else {
+        [_barView UpdateUIWithPlaying:NO];
+    }
+    
+}
+
 
 @end

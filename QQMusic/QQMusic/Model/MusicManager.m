@@ -10,6 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface MusicManager ()<AVAudioPlayerDelegate>
+
+@property (nonatomic, strong, readwrite) NSMutableArray *musicLists;
+
 @property (nonatomic, strong) AVAudioPlayer *player;
 @property (nonatomic, copy) NSString *fileName;
 @property (nonatomic, copy) void(^complete)();
@@ -27,18 +30,21 @@
     return _instance;
 }
 
--(NSArray *)getAllMusics
+- (instancetype)init
 {
-    NSMutableArray *musicArr = [NSMutableArray array];
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"mlist" ofType:@"plist"];
-    NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath];
-    for (NSDictionary *m in array) {
-        Music *music = [Music new];
-        [music setValuesForKeysWithDictionary:m];
-        [musicArr addObject:music];
+    self = [super init];
+    if (self) {
+        NSMutableArray *musicArr = [NSMutableArray array];
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"mlist" ofType:@"plist"];
+        NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath];
+        for (NSDictionary *m in array) {
+            Music *music = [Music new];
+            [music setValuesForKeysWithDictionary:m];
+            [musicArr addObject:music];
+        }
+        _musicLists = musicArr;
     }
-    return musicArr;
-    
+    return self;
 }
 
 - (void)playMusicWithFileName:(NSString *)fileName didComplete:(void (^)())complete
@@ -54,21 +60,19 @@
         self.state = MusicInit;
     }
     
-    [self PlayOrPause];
+    [self Play];
 }
 
-- (void)PlayOrPause
+
+- (void)Play
 {
-    if (self.state == MusicInit) {
-        self.state = MusicPlaying;
-        [self.player play];
-    } else if (self.state == MusicPlaying) {
-        self.state = MusicPause;
-        [self.player pause];
-    } else {
-        self.state = MusicPlaying;
-        [self.player play];
-    }
+    self.state = MusicPlaying;
+    [self.player play];
+}
+- (void)Pause
+{
+    self.state = MusicPause;
+    [self.player pause];
 }
 
 - (void)setState:(MusicState)state
@@ -80,6 +84,33 @@
         }
     }
 }
+
+- (Music *)previousMusic
+{
+    NSInteger pre = _currentIndex - 1;
+    if (pre < 0) {
+        _currentIndex = 0;
+        return _musicLists.lastObject;
+        
+    } else {
+        _currentIndex -= 1;
+        return [_musicLists objectAtIndex:pre];
+    }
+}
+
+- (Music *)nextMusic
+{
+    NSInteger next = _currentIndex + 1;
+    if (next > _musicLists.count - 1) {
+        _currentIndex = _musicLists.count - 1;
+        return _musicLists.lastObject;
+    } else {
+        _currentIndex += 1;
+        return [_musicLists objectAtIndex:next];
+    }
+    
+}
+
 #pragma mark 代理方法
 ///  当歌曲播放完毕后调用
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag

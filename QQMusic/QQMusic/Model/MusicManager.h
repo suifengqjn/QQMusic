@@ -24,16 +24,17 @@ typedef  NS_ENUM (NSInteger , MusicState) {
 
 @interface MusicManager : NSObject
 
+@property (nonatomic, strong, readonly) NSMutableArray *musicLists;
+@property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) MusicState state;
 @property (nonatomic, weak) id <MusicManagerDelegate>delegate;
 +(instancetype)getInstance;
 
 
--(NSArray *)getAllMusics;
-
-
 - (void)playMusicWithFileName:(NSString *)fileName didComplete:(void (^)())complete;
-- (void)PlayOrPause;
+- (void)Play;
+- (void)Pause;
 
-
+- (Music *)previousMusic;
+- (Music *)nextMusic;
 @end
